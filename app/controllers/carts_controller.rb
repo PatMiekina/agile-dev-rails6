@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
   before_action :set_cart, only: %i[ show edit update destroy ]
-rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
+  rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
 
   # GET /carts or /carts.json
   def index
@@ -9,6 +9,9 @@ rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
 
   # GET /carts/1 or /carts/1.json
   def show
+    unless session[:cart_id] == @cart.id
+      redirect_to store_index_url, notice: "Cart not owned" 
+    end
   end
 
   # GET /carts/new
