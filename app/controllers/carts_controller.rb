@@ -70,7 +70,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
     end
 
     def invalid_cart
-      # log the error, redirect to store index and send notice to the view
+      # log the error, redirect to store index and send notice as a flash to the view
       logger.error "Attempt to access invalid cart #{params[:id]}"
       redirect_to store_index_url, notice: 'Invalid cart'
     end
