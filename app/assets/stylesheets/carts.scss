@@ -41,4 +41,15 @@
     input[type="submit"]:hover {
       background-color: #992;
     }
+    input[type="submit"].delete-item {
+        background-color: red;
+        border-radius: 0.354em;
+        border: solid thin #000;
+        color: white;
+        font-size: 1em;
+        padding: 0.354em 1em;
+      }
+      input[type="submit"].delete-item:hover {
+        background-color: #888;
+      }
 }
