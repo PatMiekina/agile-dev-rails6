@@ -9,6 +9,7 @@ class CartsController < ApplicationController
 
   # GET /carts/1 or /carts/1.json
   def show
+    # 3 next lines added in playtime
     if session[:cart_id] != @cart.id && session[:cart_id]
       redirect_to store_index_url, notice: "Invalid cart."
     end
