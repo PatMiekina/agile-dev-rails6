@@ -1,0 +1,25 @@
+<article>
+    <% if notice %>
+        <aside id="notice"><%= notice %></aside>
+    <% end %>
+    <html>Your Cart</html>
+    <table>
+        <thead>
+            <tr>
+                <td>Qty:</td>
+                <td>Name:</td>
+                <td>Price:</td>
+            </tr>
+        </thead>
+        <%= render(cart.line_items) %>
+        <tfoot>
+            <tr>
+                <th colspan="2">Total:</th>
+                <td class="price"><%= number_to_currency(cart.total_price) %></th>
+            </tr>
+        </tfoot>
+    </table>
+    <%= button_to 'Empty cart', cart,
+                    method: :delete,
+                    data: { confirm: 'Are you sure?'} %>
+</article>
