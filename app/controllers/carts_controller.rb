@@ -9,8 +9,8 @@ class CartsController < ApplicationController
 
   # GET /carts/1 or /carts/1.json
   def show
-    unless session[:cart_id] == @cart.id
-      redirect_to store_index_url, notice: "Cart not owned" 
+    if session[:cart_id] != @cart.id && session[:cart_id]
+      redirect_to store_index_url, notice: "Invalid cart."
     end
   end
 
