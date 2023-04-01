@@ -26,8 +26,6 @@ class CartsControllerTest < ActionDispatch::IntegrationTest
   test "should show cart" do
     # session[:cart_id] = @cart.id
     get cart_url(@cart)
-    puts "Session cart id: #{session}"
-    puts "Cart id: #{@cart.id}"
     assert_response :success
   end
 
