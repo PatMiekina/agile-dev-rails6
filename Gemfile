@@ -55,3 +55,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # prevent warning: already initialized constant
 gem "net-http"
+
+gem "dotenv", "~> 2.8"
