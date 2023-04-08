@@ -33,12 +33,12 @@ class Order < ApplicationRecord
             payment_details[:expiration_year] = year
         when "Purchase order"
             payment_method = :po
-            payment_details[:num] = pay_type_params[:po_number]
+            payment_details[:po_num] = pay_type_params[:po_number]
         end
 
         payment_result = Pago.make_payment(
             order_id: id,
-            payment_method: payment_method
+            payment_method: payment_method,
             payment_details: payment_details
         )
 
