@@ -32,15 +32,16 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Configure mailer
-  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = :test
+  # config.action_mailer.delivery_method = :smtp
 
-  config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
-    port: 387,
-    username: ENV['MAILER_USERNAME'],
-    password: ENV['MAILER_PASSWORD'],
-    enable_starttls_auto: true
-  }
+  # config.action_mailer.smtp_settings = {
+  #   address: "smtp.gmail.com",
+  #   port: 387,
+  #   username: ENV['MAILER_USERNAME'],
+  #   password: ENV['MAILER_PASSWORD'],
+  #   enable_starttls_auto: true
+  # }
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
