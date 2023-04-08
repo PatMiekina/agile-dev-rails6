@@ -1,14 +1,15 @@
 class OrderMailer < ApplicationMailer
+  default from: "Best Seller #{ENV['MAILER_ADDRESS']}"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
   #   en.order_mailer.received.subject
   #
-  def received
-    @greeting = "Hi"
+  def received(order)
+    @order = order
 
-    mail to: "to@example.org"
+    mail to: order.email, subject: 'Pragmatic Store Order Confirmation'
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -17,8 +18,8 @@ class OrderMailer < ApplicationMailer
   #   en.order_mailer.shipped.subject
   #
   def shipped
-    @greeting = "Hi"
+    @order = order
 
-    mail to: "to@example.org"
+    mail to: order.email, subject: 'Pragmatic Store Order Shipped'
   end
 end
