@@ -1,5 +1,5 @@
 class OrderMailer < ApplicationMailer
-  default from: "depot@example.com"
+  default from: "Sam Ruby <depot@example.com>"
   # default from: "Best Seller #{ENV['MAILER_ADDRESS']}"
 
   # Subject can be set in your I18n file at config/locales/en.yml
