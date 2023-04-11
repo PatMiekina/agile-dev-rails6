@@ -21,6 +21,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+# enable rails translations into javascript
+# gem 'i18n-js', ">= 3.0.0.rc11"
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
