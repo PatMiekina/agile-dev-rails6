@@ -1,0 +1,2 @@
+class SupportRequestController < ApplicationController
+end

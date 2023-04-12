@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   end
   resources :users
 
+  resources :support_requests, only: [:index, :update]
+
   # internalization for pages below:
   scope'(:locale)' do
     resources :orders
